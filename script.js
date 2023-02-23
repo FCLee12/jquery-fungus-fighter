@@ -51,32 +51,72 @@ function onReady() {
 
 function arcaneSceptreGo() {
     console.log( 'arcaneSceptreGo is running' );
-    attackPower -= arcaneSceptre.apCost;
+    if(attackPower - arcaneSceptre.apCost > 0) {
+        attackPower -= arcaneSceptre.apCost;
+    } else if(attackPower - arcaneSceptre.apCost < 0) {
+        attackPower = 0;
+    }
+    if(fungusHP - arcaneSceptre.hpDamage > 0) {
     fungusHP -= arcaneSceptre.hpDamage;
+    } else if(fungusHP - arcaneSceptre.hpDamage < 0) {
+        fungusHP = 0;
+    }
     console.log( attackPower );
     console.log( fungusHP );
 }
 
 function entangleGo() {
     console.log( 'entangleGo is running' );
-    attackPower -= entangle.apCost;
+    if(attackPower - entangle.apCost > 0) {
+        attackPower -= entangle.apCost;
+    } else if( attackPower - entangle.apCost < 0 ){
+        attackPower = 0;
+    }
+    if(fungusHP - entangle.hpDamage > 0) {
     fungusHP -= entangle.hpDamage;
+    } else if(fungusHP - entangle.hpDamage < 0) {
+        fungusHP = 0;
+    }
     console.log( attackPower );
     console.log( fungusHP );
 }
 
 function dragonBladeGo() {
     console.log( 'dragonBladeGo is running' );
-    attackPower -= dragonBlade.apCost;
-    fungusHP -= dragonBlade.hpDamage;
+    if(attackPower - dragonBlade.apCost > 0) {
+        attackPower -= dragonBlade.apCost;
+    } else if( attackPower - dragonBlade.apCost < 0 ) {
+        attackPower = 0;
+    }
+    if(fungusHP - dragonBlade.hpDamage > 0) {
+        fungusHP -= dragonBlade.hpDamage;
+    } else if (fungusHP - dragonBlade.hpDamage < 0) {
+        fungusHP = 0;
+    }
     console.log( attackPower );
     console.log( fungusHP );
 }
 
 function starFireGo() {
     console.log( 'starFireGo is running' );
-    attackPower -= starFire.apCost;
-    fungusHP -= starFire.hpDamage;
+    if(attackPower - starFire.apCost > 0) {
+        attackPower -= starFire.apCost;
+    } else if ( attackPower - starFire.apCost < 0) {
+        attackPower = 0;
+    }
+    if(fungusHP - starFire.hpDamage > 0) {
+        fungusHP -= starFire.hpDamage;
+    } else if ( attackPower - starFire.hpDamage < 0) {
+        fungusHP = 0;
+    }
     console.log( attackPower );
     console.log( fungusHP );
+}
+
+function adjustHPBar() {
+
+}
+
+function adjustAPBar() {
+
 }
