@@ -5,6 +5,10 @@ $(document).ready(onReady);
 // Example:
 // let fungusHP = 100;
 
+// State Variables
+let fungusHP = 100;
+let attackPower = 100;
+
 function onReady() {
     
     // Make sure you check the index.html file! 
