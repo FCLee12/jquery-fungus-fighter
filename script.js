@@ -20,9 +20,32 @@ function onReady() {
     // - Updates state which is ->
     // - Rendered to the DOM
 
+    // Attack Objects
+    let arcaneSceptre = {
+        apCost: 12,
+        hpDamage: 14
+    }
+
+    let entangle = {
+        apCost: 23,
+        hpDamage: 9
+    }
+
+    let dragonBlade = {
+        apCost: 38,
+        hpDamage: 47
+    }
+
+    let starFire = {
+        apCost: 33,
+        hpDamage: 25
+    }
+
+    
     // Arcane Sceptre
     // AP: 12
     // HP Damage: 14
+    
 
     // Entangle
     // AP: 23
