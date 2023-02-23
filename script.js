@@ -46,7 +46,12 @@ function onReady() {
     $( '.attacks' ).on('click', '.entangle', entangleGo)
     $( '.attacks' ).on('click', '.dragon-blade', dragonBladeGo)
     $( '.attacks' ).on('click', '.star-fire', starFireGo)
-
+    
+    // Checking to see how to grab value attribute from progress element
+    // let apBar = $( '#ap-meter' ).val();
+    // let hpBar = $( '#hp-meter' ).val();
+    // console.log( apBar );
+    // console.log( hpBar );
 }
 
 function arcaneSceptreGo() {
@@ -63,6 +68,7 @@ function arcaneSceptreGo() {
     }
     console.log( attackPower );
     console.log( fungusHP );
+    adjustBars();
 }
 
 function entangleGo() {
@@ -79,6 +85,7 @@ function entangleGo() {
     }
     console.log( attackPower );
     console.log( fungusHP );
+    adjustBars();
 }
 
 function dragonBladeGo() {
@@ -95,6 +102,7 @@ function dragonBladeGo() {
     }
     console.log( attackPower );
     console.log( fungusHP );
+    adjustBars();
 }
 
 function starFireGo() {
@@ -111,12 +119,11 @@ function starFireGo() {
     }
     console.log( attackPower );
     console.log( fungusHP );
+    adjustBars();
 }
 
-function adjustHPBar() {
-
-}
-
-function adjustAPBar() {
-
+function adjustBars() {
+    console.log( 'adjustBars running' );
+    $( '#hp-meter' ).val(fungusHP);
+    $( '#ap-meter' ).val(attackPower);
 }
