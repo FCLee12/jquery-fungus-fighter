@@ -60,11 +60,13 @@ function arcaneSceptreGo() {
         attackPower -= arcaneSceptre.apCost;
     } else if(attackPower - arcaneSceptre.apCost < 0) {
         attackPower = 0;
+        loseAnimation();
     }
     if(fungusHP - arcaneSceptre.hpDamage > 0) {
     fungusHP -= arcaneSceptre.hpDamage;
     } else if(fungusHP - arcaneSceptre.hpDamage < 0) {
         fungusHP = 0;
+        winAnimation();
     }
     console.log( attackPower );
     console.log( fungusHP );
@@ -77,11 +79,13 @@ function entangleGo() {
         attackPower -= entangle.apCost;
     } else if( attackPower - entangle.apCost < 0 ){
         attackPower = 0;
+        loseAnimation();
     }
     if(fungusHP - entangle.hpDamage > 0) {
     fungusHP -= entangle.hpDamage;
     } else if(fungusHP - entangle.hpDamage < 0) {
         fungusHP = 0;
+        winAnimation();
     }
     console.log( attackPower );
     console.log( fungusHP );
@@ -94,11 +98,13 @@ function dragonBladeGo() {
         attackPower -= dragonBlade.apCost;
     } else if( attackPower - dragonBlade.apCost < 0 ) {
         attackPower = 0;
+        loseAnimation();
     }
     if(fungusHP - dragonBlade.hpDamage > 0) {
         fungusHP -= dragonBlade.hpDamage;
     } else if (fungusHP - dragonBlade.hpDamage < 0) {
         fungusHP = 0;
+        winAnimation();
     }
     console.log( attackPower );
     console.log( fungusHP );
@@ -111,11 +117,13 @@ function starFireGo() {
         attackPower -= starFire.apCost;
     } else if ( attackPower - starFire.apCost < 0) {
         attackPower = 0;
+        loseAnimation();
     }
     if(fungusHP - starFire.hpDamage > 0) {
         fungusHP -= starFire.hpDamage;
     } else if ( attackPower - starFire.hpDamage < 0) {
         fungusHP = 0;
+        winAnimation()
     }
     console.log( attackPower );
     console.log( fungusHP );
@@ -128,4 +136,14 @@ function adjustTextAndBars() {
     $( '.ap-text' ).text(`${attackPower} AP`);
     $( '#hp-meter' ).val(fungusHP);
     $( '#ap-meter' ).val(attackPower);
+}
+
+function loseAnimation() {
+    $('.freaky-fungus').removeClass('walk')
+    $('.freaky-fungus').addClass('jump');
+}
+
+function winAnimation() {
+    $('.freaky-fungus').removeClass('walk');
+    $('.freaky-fungus').addClass('dead');
 }
