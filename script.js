@@ -68,7 +68,7 @@ function arcaneSceptreGo() {
     }
     console.log( attackPower );
     console.log( fungusHP );
-    adjustBars();
+    adjustTextAndBars();
 }
 
 function entangleGo() {
@@ -85,7 +85,7 @@ function entangleGo() {
     }
     console.log( attackPower );
     console.log( fungusHP );
-    adjustBars();
+    adjustTextAndBars();
 }
 
 function dragonBladeGo() {
@@ -102,7 +102,7 @@ function dragonBladeGo() {
     }
     console.log( attackPower );
     console.log( fungusHP );
-    adjustBars();
+    adjustTextAndBars();
 }
 
 function starFireGo() {
@@ -119,11 +119,13 @@ function starFireGo() {
     }
     console.log( attackPower );
     console.log( fungusHP );
-    adjustBars();
+    adjustTextAndBars();
 }
 
-function adjustBars() {
+function adjustTextAndBars() {
     console.log( 'adjustBars running' );
+    $( '.hp-text' ).text(`${fungusHP} HP`);
+    $( '.ap-text' ).text(`${attackPower} AP`);
     $( '#hp-meter' ).val(fungusHP);
     $( '#ap-meter' ).val(attackPower);
 }
